@@ -1,26 +1,133 @@
-ETL Using PYTHON : Top 25 Countries GPD in the World using Wikipedia.
+📊 ETL Using Python: Top 25 Countries by GDP (Wikipedia)
 
-Used Modules int this project (Python): 
+This project demonstrates a complete ETL (Extract, Transform, Load) pipeline using Python.
+Data is sourced from Wikipedia and processed into a clean, structured form for analysis.
+
+You will find:
+
+    Cleaned GDP data of the Top 25 Countries
+
+    Automated CSV generation
+
+    Automated SQL table creation
+
+    Query execution & logging
+
+This was my first practice project in ETL, and it helped me understand the complete workflow from extraction to loading.
+
+🧰 Technologies & Python Modules Used
     1. requests
     2. BeautifulSoup
     3. bs4
     4. pandas
     5. numpy
     6. datetime
-Functionalities:
-    1. main : Used to initialize variables, function calling of individual Extract, Transform, Loading and Etc.
-    2. extract : This function takes input url as parameter the extract the html file of provided in the url and extract the raw data from it and retuns pandas DataFrame.
-    3. transform : This function takes input dataframe that returned by extract function then it cleans up messy data like converting Millions into Billions and removed remaining unnecessary data and then returns clean dataframe.
-    4. loading: This function takes input dataframe that tranformed by transform function then it creates two fiile one is .csv file in the same location and a table in provided database name then return those files locations.
-    5. run_query: This function takes a query, database name and table_name as input then runs provided query and returns True.
-    6. log_process: Last but not least, this function maitain a logbook of query execution details including timestamp, it automatically called by run_query function.
-                    
-Input: If required change the url in the main function.
 
-Output: While execution of each function it will the real time updates of execution, if any error isn't occured while exection finally it prints a star line whic indicates successful completion of execution.
+🧠 ETL Pipeline Overview
 
-Note: This is my first practicing project of ETL process, there are many possibilities to have errors in the project.
-      There are three files are available Original copy is the file that is provided by guides and remaining two are created by me while learning the ETL process.
+The project follows a standard ETL structure:
 
-I learnt a lot while doing this project, Thank You.
-      
+1. main()
+
+    Initializes variables
+
+    Calls all ETL functions (extract, transform, loading)
+
+    Controls complete execution flow
+
+2. extract(url)
+
+    Takes a Wikipedia URL as input
+
+    Downloads the raw HTML
+
+    Parses the table using BeautifulSoup
+
+    Converts extracted data into a pandas DataFrame
+
+    Returns the raw DataFrame
+
+3. transform(df)
+
+    Cleans messy GDP data
+
+    Converts values (e.g., Millions → Billions)
+
+    Removes unnecessary symbols or characters
+
+    Returns a clean, analysis-ready DataFrame
+
+4. loading(df)
+
+    Saves the transformed data as:
+
+    A CSV file in the project folder
+
+    A table in a database (provided by user)
+
+    Returns the paths of the generated files
+
+5. run_query(query, db_name, table_name)
+
+    Executes a SQL query on the loaded table
+
+    Returns True on successful execution
+
+    Automatically calls the log function
+
+6. log_process()
+
+    Maintains a logbook of:
+
+    Executed queries
+
+    Status
+
+    Timestamp
+
+    Helps monitor execution history
+
+🔧 Input Configuration
+
+If needed, update the Wikipedia URL inside the main() function.
+
+Example: Replace with any GDP-related or country data table URL from Wikipedia.
+
+🟢 Output
+
+During execution, the script prints real-time status updates from each stage.
+On successful completion without errors, it prints a final star line indicating success.
+
+Generated outputs:
+
+    Cleaned CSV file
+
+    SQL table inside chosen database
+
+    Log file maintaining query history
+
+📁 Project Files
+
+    Original Copy → Provided by guides
+
+    Two Modified Versions → Written by me while learning ETL
+
+    This project helped me understand the complete ETL process in depth.
+
+🙌 Learning Experience
+
+    This was my first ETL practice project, and through it I learned:
+
+    Web scraping
+
+    Data cleaning
+
+    Data transformations
+
+    Structured loading into databases
+
+    Logging & reproducibility
+
+    Handling real-world messy data
+
+Thank you.
