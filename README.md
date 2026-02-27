@@ -26,16 +26,16 @@ This was my first practice project in ETL, and it helped me understand the compl
 
 The project follows a standard ETL structure:
 1. main()
-    Initializes variables
-    Calls all ETL functions (extract, transform, loading)
-    Controls complete execution flow
+   - Initializes variables
+   - Calls all ETL functions (extract, transform, loading)
+   - Controls complete execution flow
 
 2. extract(url)
-    Takes a Wikipedia URL as input
-    Downloads the raw HTML
-    Parses the table using BeautifulSoup
-    Converts extracted data into a pandas DataFrame
-    Returns the raw DataFrame
+   - Takes a Wikipedia URL as input
+   - Downloads the raw HTML
+   - Parses the table using BeautifulSoup
+   - Converts extracted data into a pandas DataFrame
+   - Returns the raw DataFrame
 
 3. transform(df)
     Cleans messy GDP data
@@ -44,22 +44,22 @@ The project follows a standard ETL structure:
     Returns a clean, analysis-ready DataFrame
 
 4. loading(df)
-    Saves the transformed data as:
-    A CSV file in the project folder
-    A table in a database (provided by user)
-    Returns the paths of the generated files
+   - Saves the transformed data as:
+   - A CSV file in the project folder
+   - A table in a database (provided by user)
+   - Returns the paths of the generated files
 
 5. run_query(query, db_name, table_name)
-    Executes a SQL query on the loaded table
-    Returns True on successful execution
-    Automatically calls the log function
+   - Executes a SQL query on the loaded table
+   - Returns True on successful execution
+   - Automatically calls the log function
 
 6. log_process()
-    Maintains a logbook of:
-    Executed queries
-    Status
-    Timestamp
-    Helps monitor execution history
+   - Maintains a logbook of:
+   - Executed queries
+   - Status
+   - Timestamp
+   - Helps monitor execution history
 
 --- 
 
